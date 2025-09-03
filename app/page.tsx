@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
 
-export default function Page() {
-  const headersList = headers();
+export default async function Page() {
+  const headersList = await headers();
   const ip = headersList.get('x-forwarded-for') ?? 'Unknown';
   const userAgent = headersList.get('user-agent') ?? 'Unknown';
 
